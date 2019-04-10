@@ -1,0 +1,58 @@
+<div class="col-lg-12" [@fadeIn]>
+  <a class="boton_activo btn btn-success" [@marcar]="status" (click)="cambiarEstado()">
+    <span *ngIf="status == 'inactive'">Boton Desactivado</span>
+    <span *ngIf="status == 'active'">Boton Activado</span>
+  </a>
+
+
+  <hr>
+  <h4>Animaciones CSS3</h4>
+  <a class="boton_transiciones">Transiciones</a>
+  <div class="clearfix"></div>
+  <div class="caja_animada">
+  </div>
+
+  <hr>
+  <h4>Utilizar jquery dentro de Angular</h4>
+  <button id="botonjq">Mostrar texto</button>
+  <p id="textjq" class="alert alert-warning">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente non, adipisci laborum quis deserunt, magni animi
+    doloremque dicta at corrupti ipsum sequi. Quaerat a reprehenderit optio iusto! Reprehenderit, placeat tempore!
+  </p>
+
+  <div id='caja' style='border: 1px solid black; width: 150px; height: 50px;'>
+    Lorem ipsum dolor sit amet facere earum maiores voluptates. Non eveniet perspiciatis voluptatem repellendus
+    asperiores consequuntur distinctio!
+  </div>
+  <!-- Esto se supone ayudaria a poner tres puntos cuando un texto se pasa del limite de un div -->
+  <hr>
+  Padre:
+  <h1>{{titulo}}</h1>
+
+  <ul>
+    <li>Camisa Roja</li>
+    <li>Gorra negra</li>
+  </ul>
+  Nombre del parque:
+  <input type="text" [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()">
+  <p>
+    Resultado: {{nombreDelParque}}
+  </p>
+  <div *ngIf="miParque">
+    <h4>Datos de mi parque desde el hijo</h4>
+    <ol>
+      <li>{{miParque.nombre}}</li>
+      <li>{{miParque.metros}}</li>
+      <li>{{miParque.vegetacion}}</li>
+      <li>{{miParque.abierto}}</li>
+    </ol>
+  </div>
+
+  <hr>
+
+  <p *ngIf="nombreDelParque">
+    Hijo:
+    <app-parques [nombre]="nombreDelParque" [metrosCuadrados]="567" (pasameLosDatos)="verDatosParque($event)">
+    </app-parques>
+  </p>
+</div>

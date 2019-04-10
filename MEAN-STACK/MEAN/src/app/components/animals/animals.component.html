@@ -1,0 +1,13 @@
+<div class="col-lg-12" [@fadeIn]>
+<h1>{{title}}</h1>
+        <div class="col-lg-2" *ngFor="let animal of animals">
+          <div class="thumbnail">
+              <div class="animal-imagen-mask">                 
+            <img src="{{url + 'get-image-animal/'+animal.image}}" alt="animal.name">
+             </div>
+            <div class="caption">
+              <h3><a [routerLink]="['/animal-detail',animal._id]">{{animal.name}}</a></h3>
+            </div>
+          </div>
+        </div>
+</div> 

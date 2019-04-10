@@ -1,0 +1,13 @@
+<div class="col-lg-12" [@fadeIn]>
+    <h1>{{title}}</h1>
+            <div class="col-lg-3" *ngFor="let keeper of keepers">
+              <div class="thumbnail">
+                  <div class="keeper-imagen-mask">                 
+                <img src="{{url + 'get-image-user/'+keeper.image}}" alt="keeper.name">
+                 </div>
+                <div class="caption">
+                  <h3>{{keeper.name + ' ' + keeper.surname}}</h3>
+                </div>
+              </div>
+            </div>
+    </div> 
